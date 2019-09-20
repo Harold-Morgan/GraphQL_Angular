@@ -8,8 +8,8 @@ namespace Angular_GrahQL.Entities
 {
     public enum RoomStatus
     {
-        Unavaiable = 0,
-        Avaiable = 1
+        Unavailable = 0,
+        Available = 1
     }
     public class Room
     {

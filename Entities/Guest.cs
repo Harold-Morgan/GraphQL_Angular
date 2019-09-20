@@ -9,7 +9,7 @@ namespace Angular_GrahQL.Entities
     public class Guest
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(400)]
