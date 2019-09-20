@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29111.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular GrahQL", "Angular GrahQL.csproj", "{9BA73738-9042-4DB0-BA00-23F29281E143}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BA73738-9042-4DB0-BA00-23F29281E143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA73738-9042-4DB0-BA00-23F29281E143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA73738-9042-4DB0-BA00-23F29281E143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA73738-9042-4DB0-BA00-23F29281E143}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61FB8DDD-AC51-4390-A742-098DC3D72B79}
+	EndGlobalSection
+EndGlobal
