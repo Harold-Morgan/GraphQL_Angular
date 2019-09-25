@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
+using Angular_GrahQL.EntityFrameworkCore;
+using Angular_GrahQL.Repositories;
 
 namespace Angular_GrahQL
 {
@@ -31,6 +33,8 @@ namespace Angular_GrahQL
             });
 
             services.AddAutoMapper(typeof(Startup));
+            services.AddDbContext<MyHotelDbContext>();
+            services.AddTransient<ReservationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +74,7 @@ namespace Angular_GrahQL
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
         }
     }
 }
