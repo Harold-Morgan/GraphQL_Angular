@@ -34,6 +34,8 @@ namespace Angular_GrahQL
             });
 
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddEntityFrameworkNpgsql();
             services.AddDbContext<MyHotelDbContext>();
             services.AddTransient<ReservationRepository>();
         }
