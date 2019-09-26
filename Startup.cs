@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using AutoMapper;
 using Angular_GrahQL.EntityFrameworkCore;
 using Angular_GrahQL.Repositories;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace Angular_GrahQL
 {

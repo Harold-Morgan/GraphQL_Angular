@@ -11,6 +11,7 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <RootNamespace>Angular_GrahQL</RootNamespace>
+    <UserSecretsId>976f2fe4-9b08-4c1d-a597-047447ddbc09</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
