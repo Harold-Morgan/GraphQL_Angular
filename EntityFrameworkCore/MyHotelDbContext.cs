@@ -1,17 +1,20 @@
 ﻿using Angular_GrahQL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.Extensions.Configuration;
 
 namespace Angular_GrahQL.EntityFrameworkCore
 {
     public class MyHotelDbContext : DbContext
     {
-        public static string DbConnectionString = "Server=localhost; Database=MyHotelDb; Trusted_Connection=True;";
-
+        public IConfiguration Configuration { get; }
         public MyHotelDbContext(DbContextOptions<MyHotelDbContext> options) : base(options)
         {
 
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+                => optionsBuilder.UseNpgsql(Configuration["PostgresConnection_test"]);
 
         public DbSet<Reservation> Reservations { get; set; }
 
