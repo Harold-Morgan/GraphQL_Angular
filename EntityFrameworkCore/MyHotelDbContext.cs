@@ -13,6 +13,7 @@ namespace Angular_GrahQL.EntityFrameworkCore
 
         }
 
+        //Настроить на ноутбуке энтити фреймворк
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
                 => optionsBuilder.UseNpgsql(Configuration["PostgresConnection_test"]);
 
