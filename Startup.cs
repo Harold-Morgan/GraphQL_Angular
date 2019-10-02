@@ -9,6 +9,7 @@ using AutoMapper;
 using Angular_GrahQL.EntityFrameworkCore;
 using Angular_GrahQL.Repositories;
 using Microsoft.Extensions.Configuration.UserSecrets;
+using Angular_GrahQL.Entities;
 
 namespace Angular_GrahQL
 {
@@ -78,6 +79,12 @@ namespace Angular_GrahQL
                 }
             });
 
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Guest, GuestModel>();
+                cfg.AddProfile<FooProfile>();
+            });
+
+            var mapper = config.CreateMapper();
         }
     }
 }
