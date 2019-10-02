@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Angular_GrahQL.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular_GrahQL.Controllers
@@ -40,5 +41,17 @@ namespace Angular_GrahQL.Controllers
                 }
             }
         }
+    }
+
+    public class ReservationsController : Controller
+    {
+        private readonly ReservationRepository _reservationRepository;
+
+        public ReservationsController(ReservationRepository reservationRepository)
+        {
+            _reservationRepository = reservationRepository;
+        }
+
+
     }
 }
