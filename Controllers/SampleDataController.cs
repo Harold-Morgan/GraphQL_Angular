@@ -42,16 +42,4 @@ namespace Angular_GrahQL.Controllers
             }
         }
     }
-
-    public class ReservationsController : Controller
-    {
-        private readonly ReservationRepository _reservationRepository;
-
-        public ReservationsController(ReservationRepository reservationRepository)
-        {
-            _reservationRepository = reservationRepository;
-        }
-
-
-    }
 }

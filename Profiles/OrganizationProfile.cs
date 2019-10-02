@@ -12,7 +12,10 @@ namespace Angular_GrahQL.Profiles
     {
         public OrganizationProfile()
         {
+            DisableConstructorMapping();
             CreateMap<Guest, GuestModel>();
+            CreateMap<Reservation, ReservationModel>();
+            CreateMap<Room, RoomModel>();
         }
     }
 }
