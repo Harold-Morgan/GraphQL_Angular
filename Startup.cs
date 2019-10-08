@@ -41,6 +41,16 @@ namespace Angular_GrahQL
             services.AddEntityFrameworkNpgsql();
             services.AddDbContext<MyHotelDbContext>();
             services.AddTransient<ReservationRepository>();
+
+            var config = new MapperConfiguration(cfg => {
+
+                cfg.AddProfile<OrganizationProfile>();
+            });
+
+            var mapper = config.CreateMapper();
+
+            services.AddSingleton(config);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,13 +90,6 @@ namespace Angular_GrahQL
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
-
-            var config = new MapperConfiguration(cfg => {
-                
-                cfg.AddProfile<OrganizationProfile>();
-            });
-
-            var mapper = config.CreateMapper();
         }
     }
 }

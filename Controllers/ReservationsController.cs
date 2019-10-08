@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Angular_GrahQL.Controllers
 {
+    [Route("api/[controller]")]
     public class ReservationsController : Controller
     {
         private readonly ReservationRepository _reservationRepository;
-        private MapperConfiguration config;
+        //private MapperConfiguration config;
 
-
-        public ReservationsController(MapperConfiguration config, ReservationRepository reservationRepository)
+        public ReservationsController( ReservationRepository reservationRepository)
         {
             _reservationRepository = reservationRepository;
-            this.config = config;
+            //this.config = config;
         }
 
         [HttpGet("[action]")]
