@@ -1,4 +1,4 @@
-<h1>Reservations listt</h1>
+<h1>Reservations list</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
@@ -15,10 +15,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let reservation of reservations">
-      <td>{{ reservations.room.number }}</td>
-      <td>{{ reservations.guest.name }}</td>
-      <td>{{ reservations.checkinDate }}</td>
-      <td>{{ reservations.checkoutDate }}</td>
+      <td>{{ reservation.room.number }}</td>
+      <td>{{ reservation.guest.name }}</td>
+      <td>{{ reservation.checkinDate  | date: 'dd.MM.yyyy'}}</td>
+      <td>{{ reservation.checkoutDate | date: 'dd.MM.yyyy'}}</td>
     </tr>
   </tbody>
 </table>
