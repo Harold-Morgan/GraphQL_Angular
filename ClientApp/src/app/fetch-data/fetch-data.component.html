@@ -9,12 +9,12 @@
     <tr>
       <th>Room</th>
       <th>Guest</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Date checked in</th>
+      <th>Date check out</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
+    <tr *ngFor="let reservation of reservations">
       <td>{{ reservations.room.number }}</td>
       <td>{{ reservations.guest.name }}</td>
       <td>{{ reservations.checkinDate }}</td>
