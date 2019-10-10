@@ -11,7 +11,7 @@ namespace Angular_GrahQL.GraphQL
     {
             public GraphQLSchema(IDependencyResolver resolver) : base(resolver)
             {
-                Query = resolver.Resolve<Angular_GrahQL>();
+                Query = resolver.Resolve<ReservationQuery>();
             }
     }
 }
