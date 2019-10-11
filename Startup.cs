@@ -5,6 +5,7 @@ using Angular_GrahQL.Repositories;
 using AutoMapper;
 using GraphQL;
 using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -87,6 +88,9 @@ namespace Angular_GrahQL
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+
+            app.UseGraphQL<GraphQLSchema>();
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions()); //В эксплорер айпи переход на https://*DOMAIN*/ui/playground, в домене локалхост, очевидно
 
             app.UseSpa(spa =>
             {
