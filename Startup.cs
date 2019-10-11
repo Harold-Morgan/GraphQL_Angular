@@ -1,17 +1,16 @@
+using Angular_GrahQL.EntityFrameworkCore;
+using Angular_GrahQL.GraphQL;
+using Angular_GrahQL.Profiles;
+using Angular_GrahQL.Repositories;
+using AutoMapper;
+using GraphQL;
+using GraphQL.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AutoMapper;
-using Angular_GrahQL.EntityFrameworkCore;
-using Angular_GrahQL.Repositories;
-using Microsoft.Extensions.Configuration.UserSecrets;
-using Angular_GrahQL.Entities;
-using Angular_GrahQL.Models;
-using Angular_GrahQL.Profiles;
 
 namespace Angular_GrahQL
 {
@@ -42,7 +41,8 @@ namespace Angular_GrahQL
             services.AddDbContext<MyHotelDbContext>();
             services.AddTransient<ReservationRepository>();
 
-            var config = new MapperConfiguration(cfg => {
+            var config = new MapperConfiguration(cfg =>
+            {
 
                 cfg.AddProfile<OrganizationProfile>();
             });
@@ -50,6 +50,16 @@ namespace Angular_GrahQL
             var mapper = config.CreateMapper();
 
             services.AddSingleton(config);
+
+            services.AddScoped<IDependencyResolver>(x =>
+                new FuncDependencyResolver(x.GetRequiredService));
+
+            services.AddScoped<GraphQLSchema>();
+            services.AddGraphQL(x =>
+            {
+                x.ExposeExceptions = true; //set true only in development mode. make it switchable.
+            })
+            .AddGraphTypes(ServiceLifetime.Scoped);
 
         }
 
